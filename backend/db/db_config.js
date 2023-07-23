@@ -1,27 +1,13 @@
-const Pool = require('pg').Pool;
-require('dotenv').config()
-
+const mysql = require('mysql2');
 const env = process.env.NODE_ENV || 'Dev';
 
-let connection = {};
 
-if (env !== 'Dev') {
-    connection = {
-        connectionString: process.env.DATABASE_URL,
-        ssl: {
-            rejectUnauthorized: false
-        }
-    }
-} else {
-    connection = {
-        database: process.env.DB_DATABASE,
-        user: process.env.DB_USER,
-        localhost: process.env.DB_HOST,
-        password: process.env.DB_PASSWORD,
-        PORT: process.env.DB_PORT
-    }
-}
+// create the connection to database, using port number 3306 in MAMP
+const db = mysql.createConnection({
+  host: '127.0.0.1',
+  user: 'root',
+  password: 'root',
+  database: 'anime_facts'
+});
 
-const pool = new Pool(connection)
-
-module.exports = pool;
+module.exports = db;
