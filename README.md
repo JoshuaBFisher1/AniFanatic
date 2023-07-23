@@ -1,6 +1,6 @@
 # AniFanatic
 
-## User Story for Anime Fact Generator App:
+## User Story:
 
 As an avid anime fan, I want an Anime Fact Generator app that provides me with interesting and lesser-known facts about my favorite anime series, characters, and creators, so I can expand my knowledge and share fascinating tidbits with fellow anime enthusiasts.
 
