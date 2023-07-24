@@ -1,7 +1,7 @@
+const express = require('express');
+const {home} = require('../controllers/home')
 
-const home =  (req, res) => {
-  const data = `<div style="text-align:center"><h1>Anime facts</h1> <a href="https://chandan-02.github.io/anime-facts-rest-api/">Documentation</a></div`
-  res.status(200).send(data)
-}
+const home_route = express.Router();
+home_route.get('/',home);
 
-module.exports = { home };
+module.exports = home_route;
